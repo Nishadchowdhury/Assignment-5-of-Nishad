@@ -33,10 +33,10 @@ function sum(){
 
 // get and replase value of textHolder 
 function replaseText(inputX, newValue){
-
     const getElement = document.getElementById(inputX);
     getElement.innerText = newValue;
 }
+
 
 document.getElementById('calculate-btn').addEventListener('click' , function(){
 const totalIncomeN = getvalue("Income-input" , false);
@@ -48,9 +48,22 @@ const clothesSpent = getvalue('Clothes-input', true);
 const totalExpenses = sum(foodSpent , rentSpant , clothesSpent);
 const FinalBalance = totalIncomeN - totalExpenses;
 
+if(totalIncomeN < 0){
+    alert("plese , don't put Negative value ")
+}
+
+if(FinalBalance < 0 && FinalBalance != " "){
+   
+    document.getElementById('Food-input').value = '';
+    document.getElementById('Rent-input').value = '';
+    document.getElementById('Clothes-input').value = ''; 
+    alert("plese , don't try to spent more than you income")
+}else{
 //replace final vlaue
 replaseText("Total-Expenses", totalExpenses);
 replaseText("Total-Balance", FinalBalance);
+
+}
 
 //save section started
 
@@ -59,13 +72,21 @@ replaseText("Total-Balance", FinalBalance);
     document.getElementById('save-btn').addEventListener('click',function(){
     const saveInput = getvalue('save-input',false);
     const percent = (totalIncomeN / 100) * saveInput;
-    replaseText('Total-saveing',percent);
-    const remeiningBalance = FinalBalance - percent;
-    replaseText('Total-remaining',remeiningBalance);
+    const remeining = FinalBalance - percent;
+    
+    const saveoutput = document.getElementById('Total-saveing');
+    const remeiningBalance = document.getElementById('Total-remaining');
 
-    })
+    if(remeining < 0){
+        alert("you don't have enough money , to save .")
+    }else if(percent < 0){
+        alert("plese , don't put Negative number to calculate saving")
     }
-
+    else{
+        
+    remeiningBalance.innerText = remeining;
+    saveoutput.innerText = percent;
+    }})}
 });
 
 

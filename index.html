@@ -16,14 +16,14 @@
     <link rel="shortcut icon" href="./ifile/images/favIcon.png" type="image/x-icon" />
     <!-- my custom css -->
     <link rel="stylesheet" href="./ifile/styles/style.css" />
-    <!-- this script for delete  -->
-    <script src="./tailwindOffline.js"></script>
+    <!-- this script for tailwind  -->
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <!-- header started -->
     <header>
       <div class="flex justify-center place-items-center gap-3 mb-4">
-        <h1 class="text-indigo-700 text-5xl font-bold">Money Is Honey</h1>
+        <h1 class="text-indigo-700 lg:text-5xl text-4xl font-bold">Money Is Honey</h1>
         <img class="w-16" src="./ifile/images/money.png" alt="" />
       </div>
     </header>
@@ -35,7 +35,9 @@
       <div class="flex lg:flex-row flex-col lg:gap-10">
         <!-- main img left -->
         <div class="lg:w-1/2">
-          <img class="lg:w-full rounded-xl" src="./ifile/images/imgForPc.jpg" alt="" />
+          <img class="lg:w-full lg:block hidden rounded-xl" src="./ifile/images/imgForPc.jpg" alt="" />
+          <img class="lg:hidden rounded-xl" src="./ifile/images/imgForPhone.jpg" alt="" />
+
         </div>
 
         <!-- main img right -->
@@ -54,7 +56,7 @@
                   id="Income-input"
                   class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-full-name"
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -71,7 +73,7 @@
                   id="Food-input"
                   class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-full-name"
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -86,7 +88,7 @@
                   id="Rent-input"
                   class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-full-name"
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -101,7 +103,7 @@
                   id="Clothes-input"
                   class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                   id="inline-full-name"
-                  type="text"
+                  type="number"
                 />
               </div>
             </div>
@@ -109,7 +111,7 @@
             <!-- calculate button -->
             <h1
               id="calculate-btn"
-              class="text-center font-medium text-2xl leading-7 my-7 bg-blue-700 inline-block mx-auto px-8 py-2 rounded-md text-white cursor-default"
+              class="text-center font-medium text-2xl leading-7 mb-7 bg-blue-700 inline-block mx-auto px-8 py-2 rounded-md text-white cursor-default"
             >
               Button
             </h1>
@@ -128,7 +130,8 @@
 
           <div>
             <div class="mx-auto w-2/3 mt-7">
-              <div class="md:flex md:items-center flex flex-row w-full">
+              <div class="md:flex md:items-center flex lg:flex-row flex-col lg:w-full">
+
                 <div class="md:w-1/6">
                   <h1
                     class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4"
@@ -139,21 +142,24 @@
                 </div>
 
                 <input
-                  id="save-input"
-                  class="bg-gray-200 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:border-purple-500 w-2/5 text-center"
-                  type="text"
+                  id="save-input" 
+                  class="bg-gray-200 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:border-purple-500 text-center"
+                  type="number"
                 />
 
-                <span class="w-auto px-2 text-black font-bold"> % </span>
+                <span class="w-auto px-2 text-black font-bold lg:mt-0 mt-6 text-center"> % </span>
+
                 <button
                   id="save-btn"
-                  class="text-center font-medium text-2xl leading-7 my-7 bg-blue-700 inline-block mr-auto px-8 py-2 rounded-md text-white cursor-default w-2/6"
+                  class="text-center font-medium text-2xl leading-7 my-7 bg-blue-700 inline-block mr-auto lg:px-8 lg:py-2 pb-2 rounded-md text-white cursor-default lg:w-2/6  w-full"
                 >
                   Save
                 </button>
+
               </div>
 
-              <div>
+        <!-- saveing button -->
+              <div class="mb-5">
                 <h1 class="text-center roboto font-medium text-2xl leading-6 mb-8">
                   Saveing Amount: <span id="Total-saveing">0</span>$
                 </h1>
@@ -171,11 +177,12 @@
     <!-- footer started -->
     <footer>
       <!-- nothing to add -->
+
     </footer>
     <!-- main end -->
 
     <!-- my custom js -->
-
+    
     <script src="./ifile/js/script.js"></script>
   </body>
 </html>
