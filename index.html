@@ -1,36 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Money is Honey</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- favicon source -->
-    <link rel="shortcut icon" href="./ifile/images/favIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./ifile/images/favIcon.png" type="image/x-icon" />
     <!-- my custom css -->
-    <link rel="stylesheet" href="./ifile/styles/style.css">
+    <link rel="stylesheet" href="./ifile/styles/style.css" />
     <!-- this script for delete  -->
     <script src="./tailwindOffline.js"></script>
-
-</head>
-<body>
+  </head>
+  <body>
     <!-- header started -->
     <header>
+      <div class="flex justify-center place-items-center gap-3 mb-4">
+        <h1 class="text-indigo-700 text-5xl font-bold">Money Is Honey</h1>
+        <img class="w-16" src="./ifile/images/money.png" alt="" />
+      </div>
     </header>
     <!-- header end -->
 
     <!-- main started -->
-    <main>
-      
+    <main class="lg:w-11/12 mx-auto">
+      <!-- main contents mother -->
+      <div class="flex lg:flex-row flex-col lg:gap-10">
+        <!-- main img left -->
+        <div class="lg:w-1/2">
+          <img class="lg:w-full rounded-xl" src="./ifile/images/imgForPc.jpg" alt="" />
+        </div>
+
+        <!-- main img right -->
+        <div class="lg:w-1/2 rounded-xl bg-sky-500">
+          <form class="w-full max-w-sm mx-auto flex flex-col">
+            <h1 class="text-center roboto font-medium text-2xl leading-7 my-7">Income</h1>
+
+            <div class="md:flex md:items-center">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  Income:
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input
+                  id="Income-input"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  id="inline-full-name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <h1 class="text-center roboto font-medium text-2xl leading-7 my-7">Expenses</h1>
+
+            <div class="md:flex md:items-center mb-7">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  Food:
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input
+                  id="Food-input"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  id="inline-full-name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-7">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  Rent:
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input
+                  id="Rent-input"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  id="inline-full-name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="md:flex md:items-center mb-7">
+              <div class="md:w-1/3">
+                <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                  Clothes:
+                </label>
+              </div>
+              <div class="md:w-2/3">
+                <input
+                  id="Clothes-input"
+                  class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  id="inline-full-name"
+                  type="text"
+                />
+              </div>
+            </div>
+
+            <!-- calculate button -->
+            <h1
+              id="calculate-btn"
+              class="text-center font-medium text-2xl leading-7 my-7 bg-blue-700 inline-block mx-auto px-8 py-2 rounded-md text-white cursor-default"
+            >
+              Button
+            </h1>
+            <!-- total calculated  value -->
+            <div>
+              <h1 class="text-center roboto font-medium text-2xl leading-6 mb-8">
+                Total Expenses: <span id="Total-Expenses">0</span>$
+              </h1>
+              <h1 class="text-center roboto font-medium text-2xl leading-6">
+                Balance: <span id="Total-Balance">0</span>$
+              </h1>
+            </div>
+
+            <!-- saveing part started -->
+          </form>
+
+          <div>
+            <div class="mx-auto w-2/3 mt-7">
+              <div class="md:flex md:items-center flex flex-row w-full">
+                <div class="md:w-1/6">
+                  <h1
+                    class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                    for="inline-full-name w-full"
+                  >
+                    Save :
+                  </h1>
+                </div>
+
+                <input
+                  id="save-input"
+                  class="bg-gray-200 border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:bg-white focus:border-purple-500 w-2/5 text-center"
+                  type="text"
+                />
+
+                <span class="w-auto px-2 text-black font-bold"> % </span>
+                <button
+                  id="save-btn"
+                  class="text-center font-medium text-2xl leading-7 my-7 bg-blue-700 inline-block mr-auto px-8 py-2 rounded-md text-white cursor-default w-2/6"
+                >
+                  Save
+                </button>
+              </div>
+
+              <div>
+                <h1 class="text-center roboto font-medium text-2xl leading-6 mb-8">
+                  Saveing Amount: <span id="Total-saveing">0</span>$
+                </h1>
+                <h1 class="text-center roboto font-medium text-2xl leading-6">
+                  Remaining Balance: <span id="Total-remaining">0</span>$
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- main end -->
 
     <!-- footer started -->
     <footer>
-    <!-- nothing to add -->
+      <!-- nothing to add -->
     </footer>
     <!-- main end -->
 
+    <!-- my custom js -->
 
-</body>
+    <script src="./ifile/js/script.js"></script>
+  </body>
 </html>
