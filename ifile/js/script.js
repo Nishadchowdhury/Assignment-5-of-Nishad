@@ -38,8 +38,6 @@ function replaseText(inputX, newValue){
     getElement.innerText = newValue;
 }
 
-
-
 document.getElementById('calculate-btn').addEventListener('click' , function(){
 const totalIncomeN = getvalue("Income-input" , false);
 const foodSpent = getvalue('Food-input', true);
@@ -56,13 +54,15 @@ replaseText("Total-Balance", FinalBalance);
 
 //save section started
 
-    if(totalIncomeN >0){
+    if(totalIncomeN == '' || totalIncomeN > 0){
         
     document.getElementById('save-btn').addEventListener('click',function(){
-    const totalIncomeN = getvalue("Income-input" , false);
     const saveInput = getvalue('save-input',false);
     const percent = (totalIncomeN / 100) * saveInput;
-    console.log(FinalBalance);
+    replaseText('Total-saveing',percent);
+    const remeiningBalance = FinalBalance - percent;
+    replaseText('Total-remaining',remeiningBalance);
+
     })
     }
 
